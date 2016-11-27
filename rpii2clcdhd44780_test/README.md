@@ -16,7 +16,7 @@ All of these are available on my Github account.
 
 ## Directory layout example
 
-** Please always use this standardised directory layout when using any of my freepascal or Delphi programs. The compilation scripts assume that the libraries will always be found by looking one directory back, and under libs/<name> **
+**Please always use this standardised directory layout when using any of my freepascal or Delphi programs. The compilation scripts assume that the libraries will always be found by looking one directory back, and under libs/<name>**
 
 * /home/youruser/projects/my_awesome_program
 * /home/youruser/projects/libs/rpiio
