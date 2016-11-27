@@ -1,8 +1,8 @@
 { --------------------------------------------------------------------------
   Raspberry Pi HD44780 I2C display test program
   Requires the rpiio and rpilcd libraries:
-    -
-    -
+    - https://github.com/zipplet/rpiio
+    - https://github.com/zipplet/rpilcd
   The directory layout should look something like this:
   dir/lcdtest/lcdtest.dpr
   dir/libs/rpiio
