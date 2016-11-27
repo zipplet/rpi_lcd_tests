@@ -4,8 +4,8 @@ Demonstrates the usage of the rpii2clcdhd44780 driver included with the rpilcd l
 
 ## Notes
 
-* You need to alter the code to match the I2C address of your "backpack" module. Instructions in the source code.
-* If you use a very old Raspberry Pi, the I2C device address may also be different. More instructions in the source code.
+* You need to alter the code to match the I2C address of your interface module. Instructions are in the source code.
+* If you use a very old Raspberry Pi, the I2C device filename may also be different. Instructions are in the source code.
 * __Demo video:__ https://youtu.be/XQv7JDUyKzE
 
 ## Library dependencies
