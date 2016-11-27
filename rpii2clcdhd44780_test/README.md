@@ -11,8 +11,8 @@ Demonstrates the usage of the rpii2clcdhd44780 driver included with the rpilcd l
 
 All of these are available on my Github account.
 
-* rpiio
-* rpilcd
+* rpiio - https://github.com/zipplet/rpiio
+* rpilcd - https://github.com/zipplet/rpilcd
 
 ## Directory layout example
 
