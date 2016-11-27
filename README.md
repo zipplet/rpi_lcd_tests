@@ -6,5 +6,5 @@ These are test programs for the drivers included in the __rpilcd__ library. Plea
 
 All of these are available on my Github account.
 
-* rpiio
-* rpilcd
+* rpiio - https://github.com/zipplet/rpiio
+* rpilcd - https://github.com/zipplet/rpilcd
