@@ -1,19 +1,21 @@
 # rpii2clcdhd44780 - I2C HD44780 LCD test program
 
-Demonstrates the usage of the rpii2clcdhd44780 driver included with the rpilcd library. Out of the box, it requires a 20x4 LCD.
+Demonstrates the usage of the rpii2clcdhd44780 driver included with the rpilcd library.
+
+* lcdtest20x4 - Requires a 20x4 LCD.
+* lcdtest16x2 - Requires a 16x2 LCD.
 
 ## Notes
 
-* You need to alter the code to match the I2C address of your interface module. Instructions are in the source code.
-* If you use a very old Raspberry Pi, the I2C device filename may also be different. Instructions are in the source code.
-* __Demo video:__ https://youtu.be/XQv7JDUyKzE
+* You need to alter the code to match the I2C address of your "backpack" module. Instructions in the source code.
+* If you use a very old Raspberry Pi, the I2C device address may also be different. More instructions in the source code.
 
 ## Library dependencies
 
 All of these are available on my Github account.
 
-* rpiio - https://github.com/zipplet/rpiio
-* rpilcd - https://github.com/zipplet/rpilcd
+* rpiio
+* rpilcd
 
 ## Directory layout example
 

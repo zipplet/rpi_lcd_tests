@@ -6,4 +6,5 @@ RPILCD="../libs/rpilcd"
 COMMONOPTS="-Fu${RPIIO} -Fi${RPIIO} -Fu${RPILCD} -Fi${RPILCD} -Sd -XX"
 FPC="fpc"
 
-$FPC $COMMONOPTS lcdtest.dpr
+$FPC $COMMONOPTS lcdtest20x4.dpr
+$FPC $COMMONOPTS lcdtest16x2.dpr

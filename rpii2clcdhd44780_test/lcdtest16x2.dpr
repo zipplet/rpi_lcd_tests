@@ -15,7 +15,7 @@
   Copyright (c) Michael Nixon 2016.
   Distributed under the MIT license, please see the LICENSE file.
   -------------------------------------------------------------------------- }
-program lcdtest;
+program lcdtest16x2;
 
 uses baseunix, classes, sysutils, rpii2c, rpii2clcdhd44780;
 
@@ -67,28 +67,28 @@ begin
   lcd := tHD44780LCDI2C.create(i2c);
   writeln('Initialising LCD with backlight on...');
 
-  { NOTE: Specify the correct LCD type here. This demo requires a 20x4 LCD.
-    The library currently also supports a 2LINE16COL display. More will be
+  { NOTE: Specify the correct LCD type here. This demo requires a 16x2 LCD.
+    The library currently also supports a 4LINE20COL display. More will be
     added if I manage to get hold of them. Those 2 are the 2 most common
     types. I will also be (later) adding support for directly driving the LCD
     without the I2C backpack using GPIO pins. }
 
-  if not lcd.InitialiseDisplay(true, eHD44780_4LINE20COL) then begin
+  if not lcd.InitialiseDisplay(true, eHD44780_2LINE16COL) then begin
     writeln('Failed!');
     exit;
   end;
 
-  lcd.writeStringAtLine('--------------------', 0);
-  lcd.writeStringAtLine('Hello, world', 1);
-  lcd.setPos(2, 2);
-  lcd.writeString('* <- 2, 2');
-  lcd.writeStringAtLine('Cursor on', 3);
+  lcd.writeStringAtLine('Hello, world', 0);
+  lcd.setPos(2, 1);
+  lcd.writeString('* <- 2, 1');
+  sleep(2000);
+  lcd.writeStringAtLine('Cursor on..', 1);
   lcd.setCursor(true, false);
   sleep(2000);
-  lcd.writeStringAtLine('Cursor blink', 3);
+  lcd.writeStringAtLine('Blinking...', 1);
   lcd.setCursor(true, true);
   sleep(2000);
-  lcd.writeStringAtLine('No cursor at all', 3);
+  lcd.writeStringAtLine('No cursor..', 1);
   lcd.setCursor(false, false);
   sleep(2000);
 
@@ -102,8 +102,9 @@ begin
     lcd.setBacklight(true);
     sleep(200);
   end;
-
-  lcd.writeStringAtLine('Display toggling', 0);
+	
+  lcd.clearDisplay;
+  lcd.writeStringAtLine('Display toggle', 0);
   sleep(2000);
 
   for i := 0 to 3 do begin
@@ -113,30 +114,16 @@ begin
     sleep(200);
   end;
 
-  lcd.clearDisplay;
-  lcd.writeStringAtLine('Let''s write to the', 0);
-  lcd.writeStringAtLine('display while it is', 1);
-  lcd.writeStringAtLine('turned off and see', 2);
-  lcd.writeStringAtLine('what happens. Ready?', 3);
-  sleep(5000);
-  lcd.clearDisplay;
-  lcd.writeStringAtLine('Turning the display', 0);
-  lcd.writeStringAtLine('off, writing, then', 1);
-  lcd.writeStringAtLine('turning it back on.', 2);
-  sleep(5000);
-  
   lcd.setDisplay(false);
   lcd.clearDisplay;
-  for i := 0 to 3 do begin
-    lcd.writeStringAtLine('01234567890123456789', i);
+  for i := 0 to 1 do begin
+    lcd.writeStringAtLine('0123456789012345', i);
   end;
   lcd.setDisplay(true);
   sleep(3000);
   lcd.clearDisplay;
   lcd.writeStringAtLine('It worked! The', 0);
-  lcd.writeStringAtLine('text appeared and', 1);
-  lcd.writeStringAtLine('you could not see', 2);
-  lcd.writeStringAtLine('the slow writing.', 3);
+  lcd.writeStringAtLine('text appeared', 1);
   sleep(5000);
 
 
@@ -145,7 +132,7 @@ begin
   lcd.setAllCustomChars(customCharset);
   lcd.writeStringAtLine(#0 + #1 + #2 + #3 + #4 + #5 + #6 + #7, 1);
   sleep(3000);
-  lcd.writeStringAtLine('Slowly replacing...', 2);
+  lcd.writeStringAtLine('Replacing.......', 0);
   for i := 0 to 7 do begin
     lcd.setCustomChar(i, customChar);
     sleep(500);
