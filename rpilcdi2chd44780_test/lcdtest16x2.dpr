@@ -17,7 +17,7 @@
   -------------------------------------------------------------------------- }
 program lcdtest16x2;
 
-uses baseunix, classes, sysutils, rpii2c, rpii2clcdhd44780;
+uses baseunix, classes, sysutils, rpii2c, rpilcdi2chd44780;
 
 const
   { Define one custom character }
