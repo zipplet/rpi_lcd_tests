@@ -1,6 +1,6 @@
-# rpii2clcdhd44780 - I2C HD44780 LCD test program
+# rpilcdi2chd44780 - I2C HD44780 LCD test program
 
-Demonstrates the usage of the rpii2clcdhd44780 driver included with the rpilcd library.
+Demonstrates the usage of the rpilcdi2chd44780 driver included with the rpilcd library.
 
 * lcdtest20x4 - Requires a 20x4 LCD.
 * lcdtest16x2 - Requires a 16x2 LCD.
