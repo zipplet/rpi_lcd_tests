@@ -39,7 +39,7 @@ const
 
 var
   lcd: tHD44780LCDI2C;
-  i2c: cint;
+  i2c: trpiI2CDevice;
   i: longint;
   i2caddress: longint;
 begin
@@ -60,9 +60,8 @@ begin
   { If your Raspberry Pi is very old, you may need to change the device path.
     Modern Pi: I2C_DEVPATH
     Old Pi: I2C_DEVPATH_OLD }
-  if not i2cInit(i2c, I2C_DEVPATH, i2caddress) then begin
-    writeln('Failed to initialise I2C device!');
-  end;
+  i2c := trpiI2CDevice.create;
+  i2c.openDevice(I2C_DEVPATH, i2caddress);
 
   lcd := tHD44780LCDI2C.create(i2c);
   writeln('Initialising LCD with backlight on...');
@@ -73,10 +72,7 @@ begin
     types. I will also be (later) adding support for directly driving the LCD
     without the I2C backpack using GPIO pins. }
 
-  if not lcd.InitialiseDisplay(true, eHD44780_4LINE20COL) then begin
-    writeln('Failed!');
-    exit;
-  end;
+  lcd.InitialiseDisplay(true, eHD44780_4LINE20COL);
 
   lcd.writeStringAtLine('--------------------', 0);
   lcd.writeStringAtLine('Hello, world', 1);
@@ -158,7 +154,6 @@ begin
   freeandnil(lcd);
 
   writeln('Closing I2C device.');
-  if not i2cClose(i2c) then begin
-    writeln('Failed to close I2C device!');
-  end;
+  i2c.closeDevice;
+  freeandnil(i2c);
 end.
