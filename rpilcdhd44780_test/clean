@@ -1,5 +1,5 @@
 #!/bin/sh
-rm lcdtest20x4 lcdtest16x2 > /dev/null 2>&1
+rm hdlcdtest > /dev/null 2>&1
 rm *.ppu > /dev/null 2>&1
 rm *.o > /dev/null 2>&1
 

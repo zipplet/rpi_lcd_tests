@@ -1,4 +1,4 @@
 *.ppu
 *.o
-lcdtest
+hdlcdtest
 
