@@ -91,7 +91,7 @@ begin
     end;
     writeln('Opening I2C device at address $' + inttohex(i2cAddress, 2));
     i2c := trpiI2CDevice.create;
-    i2c.openDevice(I2C_DEVPATH, i2caddress);
+    i2c.openDevice(i2caddress);
     init.i2cDevice := i2c;
     lcd := trpilcdHD44780I2C.create;
   end else begin
