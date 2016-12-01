@@ -1,4 +1,4 @@
-# rpilcdhd44780 - I2C HD44780 LCD test program
+# rpilcdhd44780 - HD44780 LCD driver test program
 
 Demonstrates the usage of the rpilcdhd44780 driver included with the rpilcd library. Run the program without any parameters for instructions.
 
