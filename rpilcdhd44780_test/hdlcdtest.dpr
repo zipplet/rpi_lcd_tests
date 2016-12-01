@@ -43,7 +43,7 @@ var
   w, h: longint;
 begin
   if paramCount < 3 then begin
-    writeln('rpilcdhd44780 driver test program, (c) Michael Nixon 2006.');
+    writeln('rpilcdhd44780 driver test program, (c) Michael Nixon 2016.');
     writeln('Usage: hdlcdtest <mode> <interface> <displaytype> [i2caddress]');
     writeln;
     writeln('mode: Specify one of:');
